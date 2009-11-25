@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [ -e makefile ]; then
+    make
+else
+    export OBJ_SUBDIR=build
+    if [ -e CMakeLists.txt ]; then
+	if [ -d build ]; then
+	    cd build
+	    rm CMakeCache.txt
+	else
+	    mkdir build
+	    cd build
+	fi
+	cmake ../
+	cd ..
+	make -C build $1 $2 $3 $4 $5
+    fi
+fi
