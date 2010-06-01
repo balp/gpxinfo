@@ -12,6 +12,7 @@
 #include <iostream.h>
 #endif
 #include <getopt.h>
+#include <stdio.h>
 
 XERCES_CPP_NAMESPACE_USE
 
